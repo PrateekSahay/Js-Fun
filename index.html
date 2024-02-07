@@ -21,3 +21,12 @@ Function
 If we add reference value to the deps array, we should keep in mind that useEffectwill run when the reference is changed — Reference points to the object’s location in memory. Reference is changed every time render occurs.
 
 In other words, useEffect runs even though the object value(e.g. user.name) is still the same. useEffect uses shallow equality comparison to identify whether dependencies are updated. -->
+
+<!-- Design questions
+1. If you have to call 5 api's to load a page then how will you do it ? 1. Promise.all 2. async await
+2. Design a weater page which fetches data from 30 api's for 30 cities. How will you do it ? can network bandwidth handle that many API calls
+3. If you are calling 5 api's in promise.all . the execution context becomes empty, how does the browser maintain the connection. -> system threads etc.
+4. if you have to submit a form but also in places where internet is not available, how will you handle it ? -> local storage, service workers. 1. you need to cache jss/js files
+4. 2. how will you handle update of form when internet is not available. -> use a queue to keep on adding data and once internet is on then data will be pushed to the server.
+ -->
+
