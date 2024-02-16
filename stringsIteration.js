@@ -18,3 +18,5 @@ let result = str2.split('');
 result.forEach(char => {
     console.log(char);
 });
+
+let filledArray = Array(10).fill(0);
