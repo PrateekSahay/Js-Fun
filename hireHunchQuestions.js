@@ -21,7 +21,7 @@ const useDebounce = ({input, delay}) => {
     const debounce = (input, delay) => {
         let timer;        
         clearTimeout(timer);
-        setTimeout(() => {
+        timer = setTimeout(() => {
             setDebouncedValue(input)
         }, delay)
     }
