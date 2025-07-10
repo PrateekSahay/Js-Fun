@@ -28,3 +28,24 @@ console.log(sum(1,2,3,4)(5));
 console.log(sum(1,2,3)(4,5));
 console.log(sum(1,2)(3,4,5));
 console.log(sum(1)(2,3,4,5));
+
+
+function sum(...args) {
+    const collected = [...args];
+  
+    function adder(...newArgs) {
+      collected.push(...newArgs);
+      return adder;
+    }
+  
+    adder.valueOf = function () {
+      return collected.reduce((a, b) => a + b, 0);
+    };
+  
+    adder.toString = function () {
+      return String(collected.reduce((a, b) => a + b, 0));
+    };
+  
+    return adder;
+  }
+  
